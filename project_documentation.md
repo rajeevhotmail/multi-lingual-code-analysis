@@ -9,548 +9,250 @@
 3. [Code Analysis](#code-analysis)
 
 ## Overview
-Total files analyzed: 9
+Total files analyzed: 10
 
 ## Function Relationships
 
 ### File: `setup.py`
 
-#### Function: `get_file_content`
-**Signature:** ` None get_file_content(file_name)`
+### File: `test_utils.py`
+
+#### Function: `test_is_limited`
+**Signature:** ` None test_is_limited(self)`
 
 **Operations:**
 ```python
-Function get_file_content Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function test_is_limited Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
-- Calls: `open`
+- Calls: `sms_is_limited`
 - Called by: None
 
 ---
 
-#### Function: `initialize_options`
-**Signature:** ` None initialize_options(self)`
+#### Function: `test_sms_length`
+**Signature:** ` None test_sms_length(self)`
 
 **Operations:**
 ```python
-Function initialize_options Makes API requests
+Function test_sms_length Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
-- Calls: None
+- Calls: `len`, `sms_length`
+- Called by: `temp_repo/tests/test_utils.py:test_sms_length`, `temp_repo/smsc/utils.py:sms_rest`, `temp_repo/smsc/utils.py:sms_length`, `temp_repo/tests/test_utils.py:test_sms_parse`, `temp_repo/tests/test_utils.py:test_sms_rest`, `temp_repo/smsc/utils.py:sms_parse`
+
+---
+
+#### Function: `test_sms_rest`
+**Signature:** ` None test_sms_rest(self)`
+
+**Operations:**
+```python
+Function test_sms_rest Performs unit testing and Makes API requests and Validates input data and Handles string operations
+```
+
+**Dependencies:**
+- Calls: `sms_rest`, `len`
+- Called by: `temp_repo/tests/test_utils.py:test_sms_rest`
+
+---
+
+#### Function: `test_sms_parse`
+**Signature:** ` None test_sms_parse(self)`
+
+**Operations:**
+```python
+Function test_sms_parse Performs unit testing and Makes API requests and Validates input data and Handles string operations
+```
+
+**Dependencies:**
+- Calls: `len`, `sms_parse`
+- Called by: `temp_repo/tests/test_utils.py:test_sms_parse`
+
+---
+
+### File: `test_functional.py`
+
+#### Function: `test_send_mobile_number`
+**Signature:** ` None test_send_mobile_number(self, mock_request)`
+
+**Operations:**
+```python
+Function test_send_mobile_number Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `MagicMock`, `SMSC`
 - Called by: None
 
 ---
 
-#### Function: `finalize_options`
-**Signature:** ` None finalize_options(self)`
+### File: `test_validations.py`
+
+#### Function: `test_validate_code_area`
+**Signature:** ` None test_validate_code_area(self)`
 
 **Operations:**
 ```python
-Function finalize_options Makes API requests
+Function test_validate_code_area Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
-- Calls: None
+- Calls: `validate_area_code`
 - Called by: None
 
 ---
 
-#### Function: `run_tests`
-**Signature:** ` None run_tests(self)`
+#### Function: `test_validate_local_number`
+**Signature:** ` None test_validate_local_number(self)`
 
 **Operations:**
 ```python
-Function run_tests Makes API requests
+Function test_validate_local_number Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
-- Calls: None
+- Calls: `validate_local_number`
+- Called by: `temp_repo/tests/test_validations.py:test_validate_local_number`
+
+---
+
+#### Function: `test_validate_length_phone_number`
+**Signature:** ` None test_validate_length_phone_number(self)`
+
+**Operations:**
+```python
+Function test_validate_length_phone_number Performs unit testing and Makes API requests and Validates input data and Handles string operations
+```
+
+**Dependencies:**
+- Calls: `validate_length_phone_number`
+- Called by: `temp_repo/tests/test_validations.py:test_validate_length_phone_number`, `temp_repo/tests/test_utils.py:test_sms_length`, `temp_repo/smsc/utils.py:sms_rest`, `temp_repo/smsc/utils.py:sms_length`, `temp_repo/tests/test_utils.py:test_sms_parse`, `temp_repo/tests/test_utils.py:test_sms_rest`, `temp_repo/smsc/utils.py:sms_parse`
+
+---
+
+#### Function: `test_validate_phones`
+**Signature:** ` None test_validate_phones(self)`
+
+**Operations:**
+```python
+Function test_validate_phones Performs unit testing and Makes API requests and Validates input data and Handles string operations
+```
+
+**Dependencies:**
+- Calls: `validate_phone_numbers`
 - Called by: None
 
 ---
 
-### File: `conf.py`
-
-### File: `test_smsc.py`
-
-#### Function: `client`
-**Signature:** ` None client()`
+#### Function: `test_validate_priority`
+**Signature:** ` None test_validate_priority(self)`
 
 **Operations:**
 ```python
-Function client Performs unit testing and Validates input data and Handles string operations
+Function test_validate_priority Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
-- Calls: `SMSC`
-- Called by: None
-
----
-
-#### Function: `params`
-**Signature:** ` None params()`
-
-**Operations:**
-```python
-Function params Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `test_client`
-**Signature:** ` None test_client()`
-
-**Operations:**
-```python
-Function test_client Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `SMSC`, `str`
-- Called by: None
-
----
-
-#### Function: `test_message_sms`
-**Signature:** ` None test_message_sms()`
-
-**Operations:**
-```python
-Function test_message_sms Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `len`, `str`, `isinstance`, `SMSMessage`
-- Called by: None
-
----
-
-#### Function: `test_sms_simple`
-**Signature:** ` None test_sms_simple()`
-
-**Operations:**
-```python
-Function test_sms_simple Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `str`, `isinstance`, `SMSMessage`
-- Called by: None
-
----
-
-#### Function: `test_sms_simple_fail`
-**Signature:** ` None test_sms_simple_fail()`
-
-**Operations:**
-```python
-Function test_sms_simple_fail Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `SMSMessage`
-- Called by: None
-
----
-
-#### Function: `test_sms_cost`
-**Signature:** ` None test_sms_cost()`
-
-**Operations:**
-```python
-Function test_sms_cost Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `str`, `isinstance`, `SMSMessage`
-- Called by: None
-
----
-
-#### Function: `test_sms_cost_fail`
-**Signature:** ` None test_sms_cost_fail()`
-
-**Operations:**
-```python
-Function test_sms_cost_fail Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `SMSMessage`
-- Called by: None
-
----
-
-#### Function: `test_sms_status`
-**Signature:** ` None test_sms_status()`
-
-**Operations:**
-```python
-Function test_sms_status Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `str`, `isinstance`, `len`
-- Called by: None
-
----
-
-#### Function: `test_sms_status_fail`
-**Signature:** ` None test_sms_status_fail()`
-
-**Operations:**
-```python
-Function test_sms_status_fail Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`
-- Called by: None
-
----
-
-#### Function: `test_get_balance`
-**Signature:** ` None test_get_balance()`
-
-**Operations:**
-```python
-Function test_get_balance Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `str`, `isinstance`
-- Called by: None
-
----
-
-#### Function: `test_get_balance_fail`
-**Signature:** ` None test_get_balance_fail()`
-
-**Operations:**
-```python
-Function test_get_balance_fail Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`
-- Called by: None
-
----
-
-#### Function: `test_viber`
-**Signature:** ` None test_viber()`
-
-**Operations:**
-```python
-Function test_viber Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `ViberMessage`, `furl`, `str`, `isinstance`
-- Called by: None
-
----
-
-#### Function: `test_flash`
-**Signature:** ` None test_flash()`
-
-**Operations:**
-```python
-Function test_flash Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `str`, `isinstance`, `FlashMessage`
-- Called by: None
-
----
-
-#### Function: `test_sms_options`
-**Signature:** ` None test_sms_options()`
-
-**Operations:**
-```python
-Function test_sms_options Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `str`, `isinstance`, `SMSMessage`
-- Called by: None
-
----
-
-### File: `__version__.py`
-
-### File: `exceptions.py`
-
-### File: `api.py`
-
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
-
-**Operations:**
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `__str__`
-**Signature:** ` None __str__(self)`
-
-**Operations:**
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: `temp_repo/tests/test_smsc.py:test_sms_simple`, `temp_repo/smsc/api.py:__repr__`, `temp_repo/tests/test_smsc.py:test_get_balance`, `temp_repo/smsc/api.py:send`, `temp_repo/smsc/responses.py:__init__`, `temp_repo/tests/test_smsc.py:test_flash`, `temp_repo/tests/test_smsc.py:test_sms_cost`, `temp_repo/smsc/api.py:get_balance`, `temp_repo/tests/test_smsc.py:test_message_sms`, `temp_repo/smsc/messages.py:__repr__`, `temp_repo/tests/test_smsc.py:test_sms_options`, `temp_repo/smsc/api.py:get_status`, `temp_repo/smsc/api.py:get_cost`, `temp_repo/tests/test_smsc.py:test_sms_status`, `temp_repo/smsc/responses.py:__repr__`, `temp_repo/tests/test_smsc.py:test_client`, `temp_repo/tests/test_smsc.py:test_viber`
-
----
-
-#### Function: `__repr__`
-**Signature:** ` None __repr__(self)`
-
-**Operations:**
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `str`
-- Called by: None
-
----
-
-#### Function: `__auth`
-**Signature:** ` Dict[str, Any] __auth(self)`
-
-**Operations:**
-```python
-Function __auth Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `send`
-**Signature:** ` SendResponse send(self)`
-
-**Operations:**
-```python
-Function send Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `SendResponse`, `str`, `isinstance`, `SendError`
-- Called by: None
-
----
-
-#### Function: `get_cost`
-**Signature:** ` CostResponse get_cost(self)`
-
-**Operations:**
-```python
-Function get_cost Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `CostResponse`, `str`, `isinstance`, `GetCostError`
-- Called by: None
-
----
-
-#### Function: `get_status`
-**Signature:** ` List[StatusResponse] get_status(self)`
-
-**Operations:**
-```python
-Function get_status Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `GetStatusError`, `furl`, `StatusResponse`, `str`, `isinstance`
-- Called by: None
-
----
-
-#### Function: `get_balance`
-**Signature:** ` BalanceResponse get_balance(self)`
-
-**Operations:**
-```python
-Function get_balance Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `furl`, `str`, `BalanceResponse`, `GetBalanceError`
-- Called by: None
+- Calls: `validate_priority`
+- Called by: `temp_repo/smsc/smsc.py:send_many`, `temp_repo/smsc/smsc.py:send`, `temp_repo/tests/test_validations.py:test_validate_priority`
 
 ---
 
 ### File: `__init__.py`
 
-#### Function: `emit`
-**Signature:** ` None emit(self, record)`
+### File: `validations.py`
+
+#### Function: `validate_phone_number`
+**Signature:** ` None validate_phone_number(area_code, local_number)`
 
 **Operations:**
 ```python
-Function emit Handles string operations
+Function validate_phone_number Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
 ```
 
 **Dependencies:**
-- Calls: None
-- Called by: None
+- Calls: `AreaCodeSMSCError`, `LocalNumberSMSCError`, `PhoneNumberLongSMSCError`
+- Called by: `temp_repo/smsc/validations.py:validate_phone_numbers`, `temp_repo/smsc/smsc.py:send`
 
 ---
 
-### File: `messages.py`
+#### Function: `validate_phone_numbers`
+**Signature:** ` None validate_phone_numbers(phone_numbers)`
+
+**Operations:**
+```python
+Function validate_phone_numbers Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `validate_phone_number`
+- Called by: `temp_repo/smsc/validations.py:validate_phone_numbers`, `temp_repo/smsc/smsc.py:send_many`, `temp_repo/tests/test_validations.py:test_validate_phones`, `temp_repo/smsc/smsc.py:send`
+
+---
+
+#### Function: `validate_area_code`
+**Signature:** ` None validate_area_code(area_code)`
+
+**Operations:**
+```python
+Function validate_area_code Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `bool`
+- Called by: `temp_repo/tests/test_validations.py:test_validate_code_area`
+
+---
+
+#### Function: `validate_local_number`
+**Signature:** ` None validate_local_number(local_number)`
+
+**Operations:**
+```python
+Function validate_local_number Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `bool`
+- Called by: `temp_repo/tests/test_validations.py:test_validate_local_number`
+
+---
+
+#### Function: `validate_length_phone_number`
+**Signature:** ` None validate_length_phone_number(phone_number)`
+
+**Operations:**
+```python
+Function validate_length_phone_number Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `bool`
+- Called by: `temp_repo/tests/test_validations.py:test_validate_length_phone_number`, `temp_repo/tests/test_utils.py:test_sms_length`, `temp_repo/smsc/utils.py:sms_rest`, `temp_repo/smsc/utils.py:sms_length`, `temp_repo/tests/test_utils.py:test_sms_parse`, `temp_repo/tests/test_utils.py:test_sms_rest`, `temp_repo/smsc/utils.py:sms_parse`
+
+---
+
+#### Function: `validate_priority`
+**Signature:** ` None validate_priority(priority)`
+
+**Operations:**
+```python
+Function validate_priority Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `PriorityOutOfRangeError`
+- Called by: `temp_repo/smsc/smsc.py:send_many`, `temp_repo/smsc/smsc.py:send`, `temp_repo/tests/test_validations.py:test_validate_priority`
+
+---
+
+### File: `smsc.py`
 
 #### Function: `__init__`
-**Signature:** ` None __init__(self)`
-
-**Operations:**
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `super`, `len`
-- Called by: None
-
----
-
-#### Function: `format`
-**Signature:** ` str format(self)`
-
-**Operations:**
-```python
-Function format Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `text`
-**Signature:** ` str text(self)`
-
-**Operations:**
-```python
-Function text Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `encode`
-**Signature:** ` Dict[str, Any] encode(self)`
-
-**Operations:**
-```python
-Function encode Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `__str__`
-**Signature:** ` str __str__(self)`
-
-**Operations:**
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: `temp_repo/tests/test_smsc.py:test_sms_simple`, `temp_repo/smsc/api.py:__repr__`, `temp_repo/tests/test_smsc.py:test_get_balance`, `temp_repo/smsc/api.py:send`, `temp_repo/smsc/responses.py:__init__`, `temp_repo/tests/test_smsc.py:test_flash`, `temp_repo/tests/test_smsc.py:test_sms_cost`, `temp_repo/smsc/api.py:get_balance`, `temp_repo/tests/test_smsc.py:test_message_sms`, `temp_repo/smsc/messages.py:__repr__`, `temp_repo/tests/test_smsc.py:test_sms_options`, `temp_repo/smsc/api.py:get_status`, `temp_repo/smsc/api.py:get_cost`, `temp_repo/tests/test_smsc.py:test_sms_status`, `temp_repo/smsc/responses.py:__repr__`, `temp_repo/tests/test_smsc.py:test_client`, `temp_repo/tests/test_smsc.py:test_viber`
-
----
-
-#### Function: `__repr__`
-**Signature:** ` str __repr__(self)`
-
-**Operations:**
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `str`
-- Called by: None
-
----
-
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
-
-**Operations:**
-```python
-Function __init__ Performs unit testing and Validates expected behavior and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `super`, `len`
-- Called by: None
-
----
-
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
-
-**Operations:**
-```python
-Function __init__ Performs unit testing and Validates expected behavior and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `super`, `len`
-- Called by: None
-
----
-
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
-
-**Operations:**
-```python
-Function __init__ Performs unit testing and Validates expected behavior and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `super`, `len`
-- Called by: None
-
----
-
-### File: `responses.py`
-
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
+**Signature:** ` None __init__(self, alias, apikey, apiversion, lineid)`
 
 **Operations:**
 ```python
@@ -558,143 +260,59 @@ Function __init__ Performs unit testing and Makes API requests and Validates inp
 ```
 
 **Dependencies:**
-- Calls: `str`, `super`, `float`
-- Called by: None
-
----
-
-#### Function: `__str__`
-**Signature:** ` str __str__(self)`
-
-**Operations:**
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: `temp_repo/tests/test_smsc.py:test_sms_simple`, `temp_repo/smsc/api.py:__repr__`, `temp_repo/tests/test_smsc.py:test_get_balance`, `temp_repo/smsc/api.py:send`, `temp_repo/smsc/responses.py:__init__`, `temp_repo/tests/test_smsc.py:test_flash`, `temp_repo/tests/test_smsc.py:test_sms_cost`, `temp_repo/smsc/api.py:get_balance`, `temp_repo/tests/test_smsc.py:test_message_sms`, `temp_repo/smsc/messages.py:__repr__`, `temp_repo/tests/test_smsc.py:test_sms_options`, `temp_repo/smsc/api.py:get_status`, `temp_repo/smsc/api.py:get_cost`, `temp_repo/tests/test_smsc.py:test_sms_status`, `temp_repo/smsc/responses.py:__repr__`, `temp_repo/tests/test_smsc.py:test_client`, `temp_repo/tests/test_smsc.py:test_viber`
-
----
-
-#### Function: `__repr__`
-**Signature:** ` str __repr__(self)`
-
-**Operations:**
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: `str`
-- Called by: None
-
----
-
-#### Function: `status_id`
-**Signature:** ` int status_id(self)`
-
-**Operations:**
-```python
-Function status_id Handles string operations
-```
-
-**Dependencies:**
 - Calls: None
 - Called by: None
 
 ---
 
-#### Function: `name`
-**Signature:** ` str name(self)`
+#### Function: `_url`
+**Signature:** ` None _url(self, cmd, **kwargs)`
 
 **Operations:**
 ```python
-Function name Handles string operations
+Function _url Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
-- Calls: None
+- Calls: `dict`
 - Called by: None
 
 ---
 
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
+#### Function: `send`
+**Signature:** ` None send(self, area_code, local_number, msg, time, priority)`
 
 **Operations:**
 ```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
+Function send Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
-- Calls: `str`, `super`, `float`
+- Calls: `validate_priority`, `validate_phone_number`
 - Called by: None
 
 ---
 
-#### Function: `error`
-**Signature:** ` Optional[SMSCError] error(self)`
+#### Function: `send_many`
+**Signature:** ` None send_many(self, phone_numbers, msg, time, priority)`
 
 **Operations:**
 ```python
-Function error Performs unit testing and Validates input data and Handles string operations
+Function send_many Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
-- Calls: `SMSCError`
+- Calls: `validate_priority`, `validate_phone_numbers`
 - Called by: None
 
 ---
 
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
+#### Function: `sent`
+**Signature:** ` None sent(self, last_id, max_id)`
 
 **Operations:**
 ```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: `str`, `super`, `float`
-- Called by: None
-
----
-
-#### Function: `__str__`
-**Signature:** ` str __str__(self)`
-
-**Operations:**
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: `temp_repo/tests/test_smsc.py:test_sms_simple`, `temp_repo/smsc/api.py:__repr__`, `temp_repo/tests/test_smsc.py:test_get_balance`, `temp_repo/smsc/api.py:send`, `temp_repo/smsc/responses.py:__init__`, `temp_repo/tests/test_smsc.py:test_flash`, `temp_repo/tests/test_smsc.py:test_sms_cost`, `temp_repo/smsc/api.py:get_balance`, `temp_repo/tests/test_smsc.py:test_message_sms`, `temp_repo/smsc/messages.py:__repr__`, `temp_repo/tests/test_smsc.py:test_sms_options`, `temp_repo/smsc/api.py:get_status`, `temp_repo/smsc/api.py:get_cost`, `temp_repo/tests/test_smsc.py:test_sms_status`, `temp_repo/smsc/responses.py:__repr__`, `temp_repo/tests/test_smsc.py:test_client`, `temp_repo/tests/test_smsc.py:test_viber`
-
----
-
-#### Function: `__repr__`
-**Signature:** ` str __repr__(self)`
-
-**Operations:**
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: `str`
-- Called by: None
-
----
-
-#### Function: `message_id`
-**Signature:** ` str message_id(self)`
-
-**Operations:**
-```python
-Function message_id Handles string operations
+Function sent Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
@@ -703,222 +321,40 @@ Function message_id Handles string operations
 
 ---
 
-#### Function: `count`
-**Signature:** ` int count(self)`
+#### Function: `received`
+**Signature:** ` None received(self, last_id)`
 
 **Operations:**
 ```python
-Function count Handles string operations
+Function received Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
 - Calls: None
-- Called by: None
-
----
-
-#### Function: `cost`
-**Signature:** ` float cost(self)`
-
-**Operations:**
-```python
-Function cost Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
-
-**Operations:**
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: `str`, `super`, `float`
-- Called by: None
-
----
-
-#### Function: `__str__`
-**Signature:** ` None __str__(self)`
-
-**Operations:**
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: `temp_repo/tests/test_smsc.py:test_sms_simple`, `temp_repo/smsc/api.py:__repr__`, `temp_repo/tests/test_smsc.py:test_get_balance`, `temp_repo/smsc/api.py:send`, `temp_repo/smsc/responses.py:__init__`, `temp_repo/tests/test_smsc.py:test_flash`, `temp_repo/tests/test_smsc.py:test_sms_cost`, `temp_repo/smsc/api.py:get_balance`, `temp_repo/tests/test_smsc.py:test_message_sms`, `temp_repo/smsc/messages.py:__repr__`, `temp_repo/tests/test_smsc.py:test_sms_options`, `temp_repo/smsc/api.py:get_status`, `temp_repo/smsc/api.py:get_cost`, `temp_repo/tests/test_smsc.py:test_sms_status`, `temp_repo/smsc/responses.py:__repr__`, `temp_repo/tests/test_smsc.py:test_client`, `temp_repo/tests/test_smsc.py:test_viber`
-
----
-
-#### Function: `__repr__`
-**Signature:** ` str __repr__(self)`
-
-**Operations:**
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: `str`
-- Called by: None
-
----
-
-#### Function: `count`
-**Signature:** ` int count(self)`
-
-**Operations:**
-```python
-Function count Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `cost`
-**Signature:** ` float cost(self)`
-
-**Operations:**
-```python
-Function cost Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
-
-**Operations:**
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `str`, `super`, `float`
-- Called by: None
-
----
-
-#### Function: `__str__`
-**Signature:** ` str __str__(self)`
-
-**Operations:**
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: `temp_repo/tests/test_smsc.py:test_sms_simple`, `temp_repo/smsc/api.py:__repr__`, `temp_repo/tests/test_smsc.py:test_get_balance`, `temp_repo/smsc/api.py:send`, `temp_repo/smsc/responses.py:__init__`, `temp_repo/tests/test_smsc.py:test_flash`, `temp_repo/tests/test_smsc.py:test_sms_cost`, `temp_repo/smsc/api.py:get_balance`, `temp_repo/tests/test_smsc.py:test_message_sms`, `temp_repo/smsc/messages.py:__repr__`, `temp_repo/tests/test_smsc.py:test_sms_options`, `temp_repo/smsc/api.py:get_status`, `temp_repo/smsc/api.py:get_cost`, `temp_repo/tests/test_smsc.py:test_sms_status`, `temp_repo/smsc/responses.py:__repr__`, `temp_repo/tests/test_smsc.py:test_client`, `temp_repo/tests/test_smsc.py:test_viber`
-
----
-
-#### Function: `__repr__`
-**Signature:** ` str __repr__(self)`
-
-**Operations:**
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
-**Dependencies:**
-- Calls: `str`
 - Called by: None
 
 ---
 
 #### Function: `status`
-**Signature:** ` Status status(self)`
+**Signature:** ` None status(self)`
 
 **Operations:**
 ```python
-Function status Handles string operations
+Function status Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
 - Calls: None
-- Called by: None
-
----
-
-#### Function: `data`
-**Signature:** ` Dict[str, Any] data(self)`
-
-**Operations:**
-```python
-Function data Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: None
-
----
-
-#### Function: `__init__`
-**Signature:** ` None __init__(self)`
-
-**Operations:**
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: `str`, `super`, `float`
-- Called by: None
-
----
-
-#### Function: `__str__`
-**Signature:** ` str __str__(self)`
-
-**Operations:**
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: None
-- Called by: `temp_repo/tests/test_smsc.py:test_sms_simple`, `temp_repo/smsc/api.py:__repr__`, `temp_repo/tests/test_smsc.py:test_get_balance`, `temp_repo/smsc/api.py:send`, `temp_repo/smsc/responses.py:__init__`, `temp_repo/tests/test_smsc.py:test_flash`, `temp_repo/tests/test_smsc.py:test_sms_cost`, `temp_repo/smsc/api.py:get_balance`, `temp_repo/tests/test_smsc.py:test_message_sms`, `temp_repo/smsc/messages.py:__repr__`, `temp_repo/tests/test_smsc.py:test_sms_options`, `temp_repo/smsc/api.py:get_status`, `temp_repo/smsc/api.py:get_cost`, `temp_repo/tests/test_smsc.py:test_sms_status`, `temp_repo/smsc/responses.py:__repr__`, `temp_repo/tests/test_smsc.py:test_client`, `temp_repo/tests/test_smsc.py:test_viber`
-
----
-
-#### Function: `__repr__`
-**Signature:** ` str __repr__(self)`
-
-**Operations:**
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
-**Dependencies:**
-- Calls: `str`
 - Called by: None
 
 ---
 
 #### Function: `balance`
-**Signature:** ` float balance(self)`
+**Signature:** ` None balance(self)`
 
 **Operations:**
 ```python
-Function balance Handles string operations
+Function balance Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
@@ -927,12 +363,12 @@ Function balance Handles string operations
 
 ---
 
-#### Function: `credit`
-**Signature:** ` float credit(self)`
+#### Function: `cancel_queue`
+**Signature:** ` None cancel_queue(self)`
 
 **Operations:**
 ```python
-Function credit Handles string operations
+Function cancel_queue Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 **Dependencies:**
@@ -941,12 +377,14 @@ Function credit Handles string operations
 
 ---
 
-#### Function: `currency`
-**Signature:** ` str currency(self)`
+### File: `exceptions.py`
+
+#### Function: `__init__`
+**Signature:** ` None __init__(self, expr, msg)`
 
 **Operations:**
 ```python
-Function currency Handles string operations
+Function __init__ Basic function operations
 ```
 
 **Dependencies:**
@@ -954,22 +392,89 @@ Function currency Handles string operations
 - Called by: None
 
 ---
+
+### File: `utils.py`
+
+#### Function: `sms_is_limited`
+**Signature:** ` None sms_is_limited(msg)`
+
+**Operations:**
+```python
+Function sms_is_limited Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `ord`
+- Called by: `temp_repo/tests/test_utils.py:test_is_limited`, `temp_repo/smsc/utils.py:sms_parse`, `temp_repo/smsc/utils.py:sms_length`, `temp_repo/smsc/utils.py:sms_rest`
+
+---
+
+#### Function: `sms_length`
+**Signature:** ` None sms_length(msg)`
+
+**Operations:**
+```python
+Function sms_length Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `sms_is_limited`, `len`
+- Called by: `temp_repo/tests/test_utils.py:test_sms_length`, `temp_repo/smsc/utils.py:sms_rest`, `temp_repo/smsc/utils.py:sms_length`, `temp_repo/tests/test_utils.py:test_sms_parse`, `temp_repo/tests/test_utils.py:test_sms_rest`, `temp_repo/smsc/utils.py:sms_parse`
+
+---
+
+#### Function: `sms_rest`
+**Signature:** ` None sms_rest(msg)`
+
+**Operations:**
+```python
+Function sms_rest Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `sms_is_limited`, `len`
+- Called by: `temp_repo/tests/test_utils.py:test_sms_rest`
+
+---
+
+#### Function: `sms_parse`
+**Signature:** ` None sms_parse(msg, offset)`
+
+**Operations:**
+```python
+Function sms_parse Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+**Dependencies:**
+- Calls: `sms_is_limited`, `len`, `range`
+- Called by: `temp_repo/tests/test_utils.py:test_sms_parse`
+
+---
+
+### File: `__init__.py`
 
 
 ## Call Stack Visualization
 
 ```mermaid
 flowchart TD
+    send_many[send_many] --> validate_priority[validate_priority]
+    send_many[send_many] --> validate_phone_numbers[validate_phone_numbers]
+    validate_priority[validate_priority] --> PriorityOutOfRangeError[PriorityOutOfRangeError]
+    validate_phone_numbers[validate_phone_numbers] --> validate_phone_number[validate_phone_number]
+    validate_phone_number[validate_phone_number] --> AreaCodeSMSCError[AreaCodeSMSCError]
+    validate_phone_number[validate_phone_number] --> LocalNumberSMSCError[LocalNumberSMSCError]
+    validate_phone_number[validate_phone_number] --> PhoneNumberLongSMSCError[PhoneNumberLongSMSCError]
 ```
 
-### `get_file_content`
-**Location**: `setup.py`
+### `test_is_limited`
+**Location**: `test_utils.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `open`
+- `sms_is_limited`
 
 #### Called By:
 - No incoming calls
@@ -977,78 +482,87 @@ flowchart TD
 
 #### Analysis
 ```python
-Function get_file_content Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function test_is_limited Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `initialize_options`
-**Location**: `setup.py`
+### `test_sms_length`
+**Location**: `test_utils.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- No outgoing calls
+- `len`
+- `sms_length`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/tests/test_utils.py:test_sms_length`
+- `temp_repo/smsc/utils.py:sms_rest`
+- `temp_repo/smsc/utils.py:sms_length`
+- `temp_repo/tests/test_utils.py:test_sms_parse`
+- `temp_repo/tests/test_utils.py:test_sms_rest`
+- `temp_repo/smsc/utils.py:sms_parse`
 </details>
 
 #### Analysis
 ```python
-Function initialize_options Makes API requests
+Function test_sms_length Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `finalize_options`
-**Location**: `setup.py`
+### `test_sms_rest`
+**Location**: `test_utils.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- No outgoing calls
+- `sms_rest`
+- `len`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/tests/test_utils.py:test_sms_rest`
 </details>
 
 #### Analysis
 ```python
-Function finalize_options Makes API requests
+Function test_sms_rest Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `run_tests`
-**Location**: `setup.py`
+### `test_sms_parse`
+**Location**: `test_utils.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- No outgoing calls
+- `len`
+- `sms_parse`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/tests/test_utils.py:test_sms_parse`
 </details>
 
 #### Analysis
 ```python
-Function run_tests Makes API requests
+Function test_sms_parse Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `client`
-**Location**: `test_smsc.py`
+### `test_send_mobile_number`
+**Location**: `test_functional.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
+- `MagicMock`
 - `SMSC`
 
 #### Called By:
@@ -1057,19 +571,19 @@ Function run_tests Makes API requests
 
 #### Analysis
 ```python
-Function client Performs unit testing and Validates input data and Handles string operations
+Function test_send_mobile_number Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
 ```
 
 ---
 
-### `params`
-**Location**: `test_smsc.py`
+### `test_validate_code_area`
+**Location**: `test_validations.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- No outgoing calls
+- `validate_area_code`
 
 #### Called By:
 - No incoming calls
@@ -1077,20 +591,65 @@ Function client Performs unit testing and Validates input data and Handles strin
 
 #### Analysis
 ```python
-Function params Handles string operations
+Function test_validate_code_area Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `test_client`
-**Location**: `test_smsc.py`
+### `test_validate_local_number`
+**Location**: `test_validations.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `SMSC`
-- `str`
+- `validate_local_number`
+
+#### Called By:
+- `temp_repo/tests/test_validations.py:test_validate_local_number`
+</details>
+
+#### Analysis
+```python
+Function test_validate_local_number Performs unit testing and Makes API requests and Validates input data and Handles string operations
+```
+
+---
+
+### `test_validate_length_phone_number`
+**Location**: `test_validations.py`
+
+<details>
+<summary>Dependencies</summary>
+
+#### Calls:
+- `validate_length_phone_number`
+
+#### Called By:
+- `temp_repo/tests/test_validations.py:test_validate_length_phone_number`
+- `temp_repo/tests/test_utils.py:test_sms_length`
+- `temp_repo/smsc/utils.py:sms_rest`
+- `temp_repo/smsc/utils.py:sms_length`
+- `temp_repo/tests/test_utils.py:test_sms_parse`
+- `temp_repo/tests/test_utils.py:test_sms_rest`
+- `temp_repo/smsc/utils.py:sms_parse`
+</details>
+
+#### Analysis
+```python
+Function test_validate_length_phone_number Performs unit testing and Makes API requests and Validates input data and Handles string operations
+```
+
+---
+
+### `test_validate_phones`
+**Location**: `test_validations.py`
+
+<details>
+<summary>Dependencies</summary>
+
+#### Calls:
+- `validate_phone_numbers`
 
 #### Called By:
 - No incoming calls
@@ -1098,278 +657,169 @@ Function params Handles string operations
 
 #### Analysis
 ```python
-Function test_client Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function test_validate_phones Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `test_message_sms`
-**Location**: `test_smsc.py`
+### `test_validate_priority`
+**Location**: `test_validations.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `len`
-- `str`
-- `isinstance`
-- `SMSMessage`
+- `validate_priority`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/smsc/smsc.py:send_many`
+- `temp_repo/smsc/smsc.py:send`
+- `temp_repo/tests/test_validations.py:test_validate_priority`
 </details>
 
 #### Analysis
 ```python
-Function test_message_sms Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function test_validate_priority Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `test_sms_simple`
-**Location**: `test_smsc.py`
+### `validate_phone_number`
+**Location**: `validations.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `furl`
-- `str`
-- `isinstance`
-- `SMSMessage`
+- `AreaCodeSMSCError`
+- `LocalNumberSMSCError`
+- `PhoneNumberLongSMSCError`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/smsc/validations.py:validate_phone_numbers`
+- `temp_repo/smsc/smsc.py:send`
 </details>
 
 #### Analysis
 ```python
-Function test_sms_simple Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function validate_phone_number Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
 ```
 
 ---
 
-### `test_sms_simple_fail`
-**Location**: `test_smsc.py`
+### `validate_phone_numbers`
+**Location**: `validations.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `furl`
-- `SMSMessage`
+- `validate_phone_number`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/smsc/validations.py:validate_phone_numbers`
+- `temp_repo/smsc/smsc.py:send_many`
+- `temp_repo/tests/test_validations.py:test_validate_phones`
+- `temp_repo/smsc/smsc.py:send`
 </details>
 
 #### Analysis
 ```python
-Function test_sms_simple_fail Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function validate_phone_numbers Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
 ```
 
 ---
 
-### `test_sms_cost`
-**Location**: `test_smsc.py`
+### `validate_area_code`
+**Location**: `validations.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `furl`
-- `str`
-- `isinstance`
-- `SMSMessage`
+- `bool`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/tests/test_validations.py:test_validate_code_area`
 </details>
 
 #### Analysis
 ```python
-Function test_sms_cost Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function validate_area_code Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
 ```
 
 ---
 
-### `test_sms_cost_fail`
-**Location**: `test_smsc.py`
+### `validate_local_number`
+**Location**: `validations.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `furl`
-- `SMSMessage`
+- `bool`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/tests/test_validations.py:test_validate_local_number`
 </details>
 
 #### Analysis
 ```python
-Function test_sms_cost_fail Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function validate_local_number Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
 ```
 
 ---
 
-### `test_sms_status`
-**Location**: `test_smsc.py`
+### `validate_length_phone_number`
+**Location**: `validations.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `furl`
-- `str`
-- `isinstance`
-- `len`
+- `bool`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/tests/test_validations.py:test_validate_length_phone_number`
+- `temp_repo/tests/test_utils.py:test_sms_length`
+- `temp_repo/smsc/utils.py:sms_rest`
+- `temp_repo/smsc/utils.py:sms_length`
+- `temp_repo/tests/test_utils.py:test_sms_parse`
+- `temp_repo/tests/test_utils.py:test_sms_rest`
+- `temp_repo/smsc/utils.py:sms_parse`
 </details>
 
 #### Analysis
 ```python
-Function test_sms_status Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function validate_length_phone_number Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
 ```
 
 ---
 
-### `test_sms_status_fail`
-**Location**: `test_smsc.py`
+### `validate_priority`
+**Location**: `validations.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `furl`
+- `PriorityOutOfRangeError`
 
 #### Called By:
-- No incoming calls
+- `temp_repo/smsc/smsc.py:send_many`
+- `temp_repo/smsc/smsc.py:send`
+- `temp_repo/tests/test_validations.py:test_validate_priority`
 </details>
 
 #### Analysis
 ```python
-Function test_sms_status_fail Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `test_get_balance`
-**Location**: `test_smsc.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `furl`
-- `str`
-- `isinstance`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function test_get_balance Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `test_get_balance_fail`
-**Location**: `test_smsc.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `furl`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function test_get_balance_fail Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `test_viber`
-**Location**: `test_smsc.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `ViberMessage`
-- `furl`
-- `str`
-- `isinstance`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function test_viber Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `test_flash`
-**Location**: `test_smsc.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `furl`
-- `str`
-- `isinstance`
-- `FlashMessage`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function test_flash Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `test_sms_options`
-**Location**: `test_smsc.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `furl`
-- `str`
-- `isinstance`
-- `SMSMessage`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function test_sms_options Performs unit testing and Validates expected behavior and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function validate_priority Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
 ```
 
 ---
 
 ### `__init__`
-**Location**: `api.py`
+**Location**: `smsc.py`
 
 <details>
 <summary>Dependencies</summary>
@@ -1383,55 +833,19 @@ Function test_sms_options Performs unit testing and Validates expected behavior 
 
 #### Analysis
 ```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `__str__`
-**Location**: `api.py`
+### `_url`
+**Location**: `smsc.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- No outgoing calls
-
-#### Called By:
-- `temp_repo/tests/test_smsc.py:test_sms_simple`
-- `temp_repo/smsc/api.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_get_balance`
-- `temp_repo/smsc/api.py:send`
-- `temp_repo/smsc/responses.py:__init__`
-- `temp_repo/tests/test_smsc.py:test_flash`
-- `temp_repo/tests/test_smsc.py:test_sms_cost`
-- `temp_repo/smsc/api.py:get_balance`
-- `temp_repo/tests/test_smsc.py:test_message_sms`
-- `temp_repo/smsc/messages.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_sms_options`
-- `temp_repo/smsc/api.py:get_status`
-- `temp_repo/smsc/api.py:get_cost`
-- `temp_repo/tests/test_smsc.py:test_sms_status`
-- `temp_repo/smsc/responses.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_client`
-- `temp_repo/tests/test_smsc.py:test_viber`
-</details>
-
-#### Analysis
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__repr__`
-**Location**: `api.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
+- `dict`
 
 #### Called By:
 - No incoming calls
@@ -1439,43 +853,20 @@ Function __str__ Performs unit testing and Makes API requests and Validates inpu
 
 #### Analysis
 ```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__auth`
-**Location**: `api.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __auth Handles string operations
+Function _url Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
 ### `send`
-**Location**: `api.py`
+**Location**: `smsc.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `furl`
-- `SendResponse`
-- `str`
-- `isinstance`
-- `SendError`
+- `validate_priority`
+- `validate_phone_number`
 
 #### Called By:
 - No incoming calls
@@ -1483,23 +874,20 @@ Function __auth Handles string operations
 
 #### Analysis
 ```python
-Function send Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function send Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `get_cost`
-**Location**: `api.py`
+### `send_many`
+**Location**: `smsc.py`
 
 <details>
 <summary>Dependencies</summary>
 
 #### Calls:
-- `furl`
-- `CostResponse`
-- `str`
-- `isinstance`
-- `GetCostError`
+- `validate_priority`
+- `validate_phone_numbers`
 
 #### Called By:
 - No incoming calls
@@ -1507,60 +895,13 @@ Function send Performs unit testing and Makes API requests and Validates input d
 
 #### Analysis
 ```python
-Function get_cost Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function send_many Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `get_status`
-**Location**: `api.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `GetStatusError`
-- `furl`
-- `StatusResponse`
-- `str`
-- `isinstance`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function get_status Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `get_balance`
-**Location**: `api.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `furl`
-- `str`
-- `BalanceResponse`
-- `GetBalanceError`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function get_balance Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `emit`
-**Location**: `__init__.py`
+### `sent`
+**Location**: `smsc.py`
 
 <details>
 <summary>Dependencies</summary>
@@ -1574,34 +915,13 @@ Function get_balance Performs unit testing and Makes API requests and Validates 
 
 #### Analysis
 ```python
-Function emit Handles string operations
+Function sent Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `__init__`
-**Location**: `messages.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `super`
-- `len`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `format`
-**Location**: `messages.py`
+### `received`
+**Location**: `smsc.py`
 
 <details>
 <summary>Dependencies</summary>
@@ -1615,666 +935,13 @@ Function __init__ Performs unit testing and Makes API requests and Validates inp
 
 #### Analysis
 ```python
-Function format Handles string operations
-```
-
----
-
-### `text`
-**Location**: `messages.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function text Handles string operations
-```
-
----
-
-### `encode`
-**Location**: `messages.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function encode Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__str__`
-**Location**: `messages.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- `temp_repo/tests/test_smsc.py:test_sms_simple`
-- `temp_repo/smsc/api.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_get_balance`
-- `temp_repo/smsc/api.py:send`
-- `temp_repo/smsc/responses.py:__init__`
-- `temp_repo/tests/test_smsc.py:test_flash`
-- `temp_repo/tests/test_smsc.py:test_sms_cost`
-- `temp_repo/smsc/api.py:get_balance`
-- `temp_repo/tests/test_smsc.py:test_message_sms`
-- `temp_repo/smsc/messages.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_sms_options`
-- `temp_repo/smsc/api.py:get_status`
-- `temp_repo/smsc/api.py:get_cost`
-- `temp_repo/tests/test_smsc.py:test_sms_status`
-- `temp_repo/smsc/responses.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_client`
-- `temp_repo/tests/test_smsc.py:test_viber`
-</details>
-
-#### Analysis
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__repr__`
-**Location**: `messages.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__init__`
-**Location**: `messages.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `super`
-- `len`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Validates expected behavior and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__init__`
-**Location**: `messages.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `super`
-- `len`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Validates expected behavior and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__init__`
-**Location**: `messages.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `super`
-- `len`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Validates expected behavior and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__init__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-- `super`
-- `float`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `__str__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- `temp_repo/tests/test_smsc.py:test_sms_simple`
-- `temp_repo/smsc/api.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_get_balance`
-- `temp_repo/smsc/api.py:send`
-- `temp_repo/smsc/responses.py:__init__`
-- `temp_repo/tests/test_smsc.py:test_flash`
-- `temp_repo/tests/test_smsc.py:test_sms_cost`
-- `temp_repo/smsc/api.py:get_balance`
-- `temp_repo/tests/test_smsc.py:test_message_sms`
-- `temp_repo/smsc/messages.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_sms_options`
-- `temp_repo/smsc/api.py:get_status`
-- `temp_repo/smsc/api.py:get_cost`
-- `temp_repo/tests/test_smsc.py:test_sms_status`
-- `temp_repo/smsc/responses.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_client`
-- `temp_repo/tests/test_smsc.py:test_viber`
-</details>
-
-#### Analysis
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `__repr__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `status_id`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function status_id Handles string operations
-```
-
----
-
-### `name`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function name Handles string operations
-```
-
----
-
-### `__init__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-- `super`
-- `float`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `error`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `SMSCError`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function error Performs unit testing and Validates input data and Handles string operations
-```
-
----
-
-### `__init__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-- `super`
-- `float`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `__str__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- `temp_repo/tests/test_smsc.py:test_sms_simple`
-- `temp_repo/smsc/api.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_get_balance`
-- `temp_repo/smsc/api.py:send`
-- `temp_repo/smsc/responses.py:__init__`
-- `temp_repo/tests/test_smsc.py:test_flash`
-- `temp_repo/tests/test_smsc.py:test_sms_cost`
-- `temp_repo/smsc/api.py:get_balance`
-- `temp_repo/tests/test_smsc.py:test_message_sms`
-- `temp_repo/smsc/messages.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_sms_options`
-- `temp_repo/smsc/api.py:get_status`
-- `temp_repo/smsc/api.py:get_cost`
-- `temp_repo/tests/test_smsc.py:test_sms_status`
-- `temp_repo/smsc/responses.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_client`
-- `temp_repo/tests/test_smsc.py:test_viber`
-</details>
-
-#### Analysis
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `__repr__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `message_id`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function message_id Handles string operations
-```
-
----
-
-### `count`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function count Handles string operations
-```
-
----
-
-### `cost`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function cost Handles string operations
-```
-
----
-
-### `__init__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-- `super`
-- `float`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `__str__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- `temp_repo/tests/test_smsc.py:test_sms_simple`
-- `temp_repo/smsc/api.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_get_balance`
-- `temp_repo/smsc/api.py:send`
-- `temp_repo/smsc/responses.py:__init__`
-- `temp_repo/tests/test_smsc.py:test_flash`
-- `temp_repo/tests/test_smsc.py:test_sms_cost`
-- `temp_repo/smsc/api.py:get_balance`
-- `temp_repo/tests/test_smsc.py:test_message_sms`
-- `temp_repo/smsc/messages.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_sms_options`
-- `temp_repo/smsc/api.py:get_status`
-- `temp_repo/smsc/api.py:get_cost`
-- `temp_repo/tests/test_smsc.py:test_sms_status`
-- `temp_repo/smsc/responses.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_client`
-- `temp_repo/tests/test_smsc.py:test_viber`
-</details>
-
-#### Analysis
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `__repr__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `count`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function count Handles string operations
-```
-
----
-
-### `cost`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function cost Handles string operations
-```
-
----
-
-### `__init__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-- `super`
-- `float`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__str__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- `temp_repo/tests/test_smsc.py:test_sms_simple`
-- `temp_repo/smsc/api.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_get_balance`
-- `temp_repo/smsc/api.py:send`
-- `temp_repo/smsc/responses.py:__init__`
-- `temp_repo/tests/test_smsc.py:test_flash`
-- `temp_repo/tests/test_smsc.py:test_sms_cost`
-- `temp_repo/smsc/api.py:get_balance`
-- `temp_repo/tests/test_smsc.py:test_message_sms`
-- `temp_repo/smsc/messages.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_sms_options`
-- `temp_repo/smsc/api.py:get_status`
-- `temp_repo/smsc/api.py:get_cost`
-- `temp_repo/tests/test_smsc.py:test_sms_status`
-- `temp_repo/smsc/responses.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_client`
-- `temp_repo/tests/test_smsc.py:test_viber`
-</details>
-
-#### Analysis
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
-```
-
----
-
-### `__repr__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+Function received Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
 ### `status`
-**Location**: `responses.py`
+**Location**: `smsc.py`
 
 <details>
 <summary>Dependencies</summary>
@@ -2288,111 +955,13 @@ Function __repr__ Performs unit testing and Makes API requests and Validates inp
 
 #### Analysis
 ```python
-Function status Handles string operations
-```
-
----
-
-### `data`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function data Handles string operations
-```
-
----
-
-### `__init__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-- `super`
-- `float`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __init__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `__str__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- No outgoing calls
-
-#### Called By:
-- `temp_repo/tests/test_smsc.py:test_sms_simple`
-- `temp_repo/smsc/api.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_get_balance`
-- `temp_repo/smsc/api.py:send`
-- `temp_repo/smsc/responses.py:__init__`
-- `temp_repo/tests/test_smsc.py:test_flash`
-- `temp_repo/tests/test_smsc.py:test_sms_cost`
-- `temp_repo/smsc/api.py:get_balance`
-- `temp_repo/tests/test_smsc.py:test_message_sms`
-- `temp_repo/smsc/messages.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_sms_options`
-- `temp_repo/smsc/api.py:get_status`
-- `temp_repo/smsc/api.py:get_cost`
-- `temp_repo/tests/test_smsc.py:test_sms_status`
-- `temp_repo/smsc/responses.py:__repr__`
-- `temp_repo/tests/test_smsc.py:test_client`
-- `temp_repo/tests/test_smsc.py:test_viber`
-</details>
-
-#### Analysis
-```python
-Function __str__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
-```
-
----
-
-### `__repr__`
-**Location**: `responses.py`
-
-<details>
-<summary>Dependencies</summary>
-
-#### Calls:
-- `str`
-
-#### Called By:
-- No incoming calls
-</details>
-
-#### Analysis
-```python
-Function __repr__ Performs unit testing and Makes API requests and Validates input data and Handles string operations
+Function status Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
 ### `balance`
-**Location**: `responses.py`
+**Location**: `smsc.py`
 
 <details>
 <summary>Dependencies</summary>
@@ -2406,13 +975,13 @@ Function __repr__ Performs unit testing and Makes API requests and Validates inp
 
 #### Analysis
 ```python
-Function balance Handles string operations
+Function balance Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `credit`
-**Location**: `responses.py`
+### `cancel_queue`
+**Location**: `smsc.py`
 
 <details>
 <summary>Dependencies</summary>
@@ -2426,13 +995,13 @@ Function balance Handles string operations
 
 #### Analysis
 ```python
-Function credit Handles string operations
+Function cancel_queue Performs unit testing and Makes API requests and Validates input data and Handles string operations
 ```
 
 ---
 
-### `currency`
-**Location**: `responses.py`
+### `__init__`
+**Location**: `exceptions.py`
 
 <details>
 <summary>Dependencies</summary>
@@ -2446,7 +1015,99 @@ Function credit Handles string operations
 
 #### Analysis
 ```python
-Function currency Handles string operations
+Function __init__ Basic function operations
+```
+
+---
+
+### `sms_is_limited`
+**Location**: `utils.py`
+
+<details>
+<summary>Dependencies</summary>
+
+#### Calls:
+- `ord`
+
+#### Called By:
+- `temp_repo/tests/test_utils.py:test_is_limited`
+- `temp_repo/smsc/utils.py:sms_parse`
+- `temp_repo/smsc/utils.py:sms_length`
+- `temp_repo/smsc/utils.py:sms_rest`
+</details>
+
+#### Analysis
+```python
+Function sms_is_limited Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+---
+
+### `sms_length`
+**Location**: `utils.py`
+
+<details>
+<summary>Dependencies</summary>
+
+#### Calls:
+- `sms_is_limited`
+- `len`
+
+#### Called By:
+- `temp_repo/tests/test_utils.py:test_sms_length`
+- `temp_repo/smsc/utils.py:sms_rest`
+- `temp_repo/smsc/utils.py:sms_length`
+- `temp_repo/tests/test_utils.py:test_sms_parse`
+- `temp_repo/tests/test_utils.py:test_sms_rest`
+- `temp_repo/smsc/utils.py:sms_parse`
+</details>
+
+#### Analysis
+```python
+Function sms_length Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+---
+
+### `sms_rest`
+**Location**: `utils.py`
+
+<details>
+<summary>Dependencies</summary>
+
+#### Calls:
+- `sms_is_limited`
+- `len`
+
+#### Called By:
+- `temp_repo/tests/test_utils.py:test_sms_rest`
+</details>
+
+#### Analysis
+```python
+Function sms_rest Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
+```
+
+---
+
+### `sms_parse`
+**Location**: `utils.py`
+
+<details>
+<summary>Dependencies</summary>
+
+#### Calls:
+- `sms_is_limited`
+- `len`
+- `range`
+
+#### Called By:
+- `temp_repo/tests/test_utils.py:test_sms_parse`
+</details>
+
+#### Analysis
+```python
+Function sms_parse Performs unit testing and Makes API requests and Validates input data and Handles string operations and Performs comparisons
 ```
 
 ---
@@ -2455,11 +1116,14 @@ Function currency Handles string operations
 ## Function Call Stacks
 
 
-### Entry Point: `run_tests`
+### Entry Point: `send_many`
 
 ```mermaid
 flowchart TD
-    run_tests --> run_tests
+    send_many --> send_many
+    send_many --> validate_priority
+    send_many --> validate_phone_numbers
+    send_many --> validate_phone_number
 ```
 
 ## Code Analysis
@@ -2470,21 +1134,39 @@ flowchart TD
 No description available
 ```
 
-### conf.py
+### test_utils.py
 ```python
-# File: temp_repo/docs/conf.py
+# File: temp_repo/tests/test_utils.py
 No description available
 ```
 
-### test_smsc.py
+### test_functional.py
 ```python
-# File: temp_repo/tests/test_smsc.py
+# File: temp_repo/tests/test_functional.py
 No description available
 ```
 
-### __version__.py
+### test_validations.py
 ```python
-# File: temp_repo/smsc/__version__.py
+# File: temp_repo/tests/test_validations.py
+No description available
+```
+
+### __init__.py
+```python
+# File: temp_repo/tests/__init__.py
+No description available
+```
+
+### validations.py
+```python
+# File: temp_repo/smsc/validations.py
+No description available
+```
+
+### smsc.py
+```python
+# File: temp_repo/smsc/smsc.py
 No description available
 ```
 
@@ -2494,9 +1176,9 @@ No description available
 No description available
 ```
 
-### api.py
+### utils.py
 ```python
-# File: temp_repo/smsc/api.py
+# File: temp_repo/smsc/utils.py
 No description available
 ```
 
@@ -2506,23 +1188,18 @@ No description available
 No description available
 ```
 
-### messages.py
-```python
-# File: temp_repo/smsc/messages.py
-No description available
-```
-
-### responses.py
-```python
-# File: temp_repo/smsc/responses.py
-No description available
-```
-
 ## Function Call Stacks
 
-### Entry Point: `run_tests`
+### Entry Point: `send_many`
 
 ```mermaid
 flowchart TD
+send_many[send_many] --> validate_priority[validate_priority]
+send_many[send_many] --> validate_phone_numbers[validate_phone_numbers]
+  validate_priority[validate_priority] --> PriorityOutOfRangeError[PriorityOutOfRangeError]
+  validate_phone_numbers[validate_phone_numbers] --> validate_phone_number[validate_phone_number]
+    validate_phone_number[validate_phone_number] --> AreaCodeSMSCError[AreaCodeSMSCError]
+    validate_phone_number[validate_phone_number] --> LocalNumberSMSCError[LocalNumberSMSCError]
+    validate_phone_number[validate_phone_number] --> PhoneNumberLongSMSCError[PhoneNumberLongSMSCError]
 ```
 
