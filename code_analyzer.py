@@ -20,12 +20,7 @@ class CodeAnalyzer:
         parser.set_language(language)
         return parser, language
 
-    def setup_parser(self):
-        LANGUAGE_PATH = os.path.expanduser('~/.tree-sitter/tree-sitter-python.so')
-        language = Language(LANGUAGE_PATH, 'python')
-        parser = Parser()
-        parser.set_language(language)
-        return parser, language
+
 
     def extract_docstring(self, node, default_description):
         # Look for docstring in the first statement of function body
